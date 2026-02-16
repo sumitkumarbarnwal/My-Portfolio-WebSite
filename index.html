@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sumit - Personal Portfolio</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Data Science, AI, Student Portfolio, LPU" name="keywords">
+        <meta content="Personal portfolio of Sumit, a Data Science student at Lovely Professional University" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Solway:400,700&display=swap" rel="stylesheet"> 
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        
+        <!-- AOS Animation Library -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        
+        <!-- Particle.js for interactive background -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        
+        <!-- Custom Styles -->
+        <style>
+            /* Override the default background image */
+            .top-header:after {
+                background: none !important;
+            }
+            
+            /* Custom background styling */
+            .bg-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('img/OIP.jpg');
+                background-size: cover;
+                background-position: center;
+                filter: blur(5px);
+                -webkit-filter: blur(5px);
+                z-index: -2;
+            }
+            
+            .content-wrapper {
+                position: relative;
+                z-index: 10;
+                padding: 40px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 20px;
+                max-width: 700px;
+                margin: 0 auto;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            :root {
+                --primary-color: #6c63ff;
+                --secondary-color: #4d44e3;
+                --dark-color: #2d2b55;
+                --light-color: #f8f9fa;
+                --accent-color: #ff6b6b;
+            }
+            
+            body {
+                font-family: 'Open Sans', sans-serif;
+                scroll-behavior: smooth;
+            }
+            
+            .btn-custom {
+                background-color: var(--primary-color);
+                color: white;
+                border-radius: 30px;
+                padding: 12px 28px;
+                transition: all 0.3s ease;
+                border: none;
+                margin-right: 10px;
+                display: inline-block;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+            
+            .btn-custom:hover {
+                background-color: var(--secondary-color);
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            }
+            
+            .section-header h3 {
+                position: relative;
+                padding-bottom: 15px;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+            
+            .section-header h3:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 2px;
+            }
+            
+            .skill-progress {
+                height: 10px;
+                border-radius: 5px;
+                background: #e9ecef;
+                margin-bottom: 25px;
+                overflow: visible;
+                position: relative;
+            }
+            
+            .skill-progress .progress-bar {
+                border-radius: 5px;
+                background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+                position: relative;
+                transition: width 1.5s ease-in-out;
+            }
+            
+            .portfolio-wrap {
+                transition: all 0.3s ease;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .portfolio-wrap:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .counter {
+                border-radius: 16px;
+                padding: 35px 25px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                background: white;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .counter:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            }
+            
+            .counter-icon-box {
+                color: var(--primary-color);
+            }
+            
+            .top-header img {
+                border: 5px solid white;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                transition: all 0.5s ease;
+                position: relative;
+                z-index: 10;
+            }
+            
+            .top-header img:hover {
+                transform: scale(1.05);
+            }
+            
+            #particles-js {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            
+            .top-header .container {
+                position: relative;
+                z-index: 5;
+            }
+            
+            .social a {
+                background: var(--primary-color);
+                color: white;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 5px;
+                transition: all 0.3s ease;
+            }
+            
+            .social a:hover {
+                background: var(--secondary-color);
+                transform: translateY(-3px);
+            }
+            
+            .nav-menu > li > a:before {
+                background: var(--primary-color);
+            }
+            
+            #portfolio-flters li {
+                border-radius: 30px;
+                padding: 8px 20px;
+                margin: 0 5px 10px;
+                transition: all 0.3s ease;
+            }
+            
+            #portfolio-flters li:hover,
+            #portfolio-flters li.filter-active {
+                background: var(--primary-color);
+            }
+            
+            .back-to-top {
+                background: var(--primary-color);
+            }
+            
+            .back-to-top:hover {
+                background: var(--secondary-color);
+            }
+            
+            .typed-cursor {
+                color: var(--primary-color);
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header Start -->
+        <div class="top-header" id="top-header" style="position: relative; z-index: 1; height: 100vh;">
+            <div class="bg-overlay"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: -1;"></div>
+            <div id="particles-js"></div>
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="min-height: 100vh;">
+                    <div class="col-lg-8 text-center">
+                        <div class="hero-content" style="position: relative; z-index: 1;">
+                            <!-- Animated Background Elements -->
+                            <div class="animated-bg" style="position: absolute; top: -100px; left: -100px; right: -100px; bottom: -100px; z-index: -1; overflow: hidden;">
+                                <div class="shape shape-1" style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: linear-gradient(45deg, rgba(108, 99, 255, 0.1), rgba(108, 99, 255, 0.05)); top: -50px; left: -150px; animation: float 8s infinite ease-in-out;"></div>
+                                <div class="shape shape-2" style="position: absolute; width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05)); bottom: -100px; right: -50px; animation: float 10s infinite ease-in-out reverse;"></div>
+                                <div class="shape shape-3" style="position: absolute; width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(45deg, rgba(29, 209, 161, 0.1), rgba(29, 209, 161, 0.05)); top: 50%; right: -75px; animation: float 12s infinite ease-in-out;"></div>
+                            </div>
+                            
+                            <!-- Profile Image with Animation -->
+                            <div class="profile-image-container" style="position: relative; width: 220px; height: 220px; margin: 0 auto 40px; border-radius: 50%; padding: 10px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center;">
+                                <div class="rotating-border" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; border: 2px dashed rgba(255, 255, 255, 0.5); animation: rotate 15s linear infinite;"></div>
+                                <img src="img/WhatsApp Image 2026-02-04 at 12.14.15 PM.jpeg" alt="Sumit" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 5px solid white; box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                
+                                <div class="highlight" style="position: absolute; width: 30px; height: 30px; background: white; border-radius: 50%; top: 15px; right: 15px; opacity: 0.2; filter: blur(5px);"></div>
+                            </div>
+                            
+                            <!-- Name with Gradient Text -->
+                            <h1 style="font-size: 48px; font-weight: 800; margin-bottom: 15px; position: relative; display: inline-block;">
+                                <span style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">I'm Sumit Kumar Barnwal</span>
+                                <div style="position: absolute; bottom: -5px; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color), transparent);"></div>
+                            </h1>
+                            
+                            <!-- Typed Text with Better Animation -->
+                            <div class="typed-container" style="margin-bottom: 25px; height: 40px;">
+                                <div id="typed-strings" style="display: none;">
+                                    <p>AI & ML Engineer</p>
+                                    <p>Data Scientist</p>
+                                    <p>Patent Holder</p>
+                                    <p>Full Stack Developer</p>
+                                    <p>Computer Vision Specialist</p>
+                                    <p>Innovation Leader</p>
+                                </div>
+                                <span id="typed" style="font-size: 24px; color: #fff; font-weight: 600;"></span>
+                            </div>
+                            
+                            <!-- University Info -->
+                            <p style="font-size: 18px; letter-spacing: 1px; margin-bottom: 30px; color: rgba(255, 255, 255, 0.8);">
+                                <i class="fa fa-graduation-cap" style="margin-right: 10px; color: var(--primary-color);"></i>Data Science @ Lovely Professional University
+                            </p>
+                            
+                            <!-- Social Media and Coding Profiles -->
+                            <div class="social-icons" style="margin-bottom: 40px; display: flex; justify-content: center; align-items: center;">
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; margin: 0 10px; color: white; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.background='var(--primary-color)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';"><i class="fa fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/sumit-kumar-barnwal-323911289/" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; margin: 0 10px; color: white; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.background='var(--accent-color)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://leetcode.com/u/sumitkumarbarnwal2019/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; margin: 0 10px; color: white; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.background='#f89f1b'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';"><i class="fa fa-code"></i></a>
+                                <a href="https://www.geeksforgeeks.org/user/Sumit/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; margin: 0 10px; color: white; font-size: 18px; transition: all 0.3s ease;" onmouseover="this.style.background='#2f8d46'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';"><i class="fa fa-laptop"></i></a>
+                            </div>
+                            
+                            <!-- Call to Action Buttons -->
+                            <div class="cta-buttons">
+                                <a href="#about" class="btn-hero primary" style="display: inline-block; padding: 15px 35px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); color: white; border-radius: 50px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3); margin: 0 10px 15px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 25px rgba(108, 99, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(108, 99, 255, 0.3)';">About Me</a>
+                                <a href="#portfolio" class="btn-hero secondary" style="display: inline-block; padding: 15px 35px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 10px 15px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';">View Projects</a>
+                            </div>
+                            
+                            <!-- Scroll Down Indicator -->
+                            <div class="scroll-down" style="position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite;">
+                                <a href="#about" style="color: rgba(255, 255, 255, 0.7); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">
+                                    Scroll Down
+                                    <div style="margin-top: 10px;">
+                                        <i class="fa fa-angle-down" style="font-size: 20px;"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                @keyframes float {
+                    0% { transform: translate(0, 0) rotate(0deg); }
+                    50% { transform: translate(20px, 20px) rotate(10deg); }
+                    100% { transform: translate(0, 0) rotate(0deg); }
+                }
+                
+                @keyframes rotate {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                
+                @keyframes bounce {
+                    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+                    40% { transform: translateY(-20px) translateX(-50%); }
+                    60% { transform: translateY(-10px) translateX(-50%); }
+                }
+            </style>
+        </div>
+        <!-- Header End -->
+
+        <!-- Nav Start -->
+        <div class="header" style="background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); position: fixed; width: 100%; z-index: 1000; padding: 15px 0; transition: all 0.3s ease;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="logo" style="padding: 0;">
+                            <h1 style="margin: 0; font-size: 28px; font-weight: 700;">
+                                <a href="index.html" style="color: var(--dark-color); text-decoration: none; position: relative; display: inline-block; white-space: nowrap;">
+                                    <span style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Sumit's</span><span style="font-weight: 600; margin-left: 5px;">Portfolio</span>
+                                </a>
+                            </h1>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-9 col-md-9 text-right">
+                        <nav id="nav-menu-container" style="margin-top: 0;">
+                            <ul class="nav-menu" style="margin: 0; padding: 0; display: flex; justify-content: flex-end; list-style: none;">
+                                <li style="margin: 0 2px;"><a href="#top-header" style="padding: 10px 15px; font-weight: 600; font-size: 14px; color: var(--dark-color); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 30px;">Home</a></li>
+                                <li style="margin: 0 2px;"><a href="#about" style="padding: 10px 15px; font-weight: 600; font-size: 14px; color: var(--dark-color); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 30px;">About me</a></li>
+                                <li style="margin: 0 2px;"><a href="#experience" style="padding: 10px 15px; font-weight: 600; font-size: 14px; color: var(--dark-color); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 30px;">Experience</a></li>
+                                <li style="margin: 0 2px;"><a href="#skills" style="padding: 10px 15px; font-weight: 600; font-size: 14px; color: var(--dark-color); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 30px;">Skills</a></li>
+                                <li style="margin: 0 2px;"><a href="#portfolio" style="padding: 10px 15px; font-weight: 600; font-size: 14px; color: var(--dark-color); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 30px;">Portfolio</a></li>
+                                <li style="margin: 0 2px;"><a href="#contact" style="padding: 10px 15px; font-weight: 600; font-size: 14px; color: var(--dark-color); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 30px;">Contact</a></li>
+                                <li style="margin: 0 2px;">
+                                    <a href="#contact" style="padding: 10px 20px; font-weight: 600; font-size: 14px; color: white; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 30px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);">Hire Me</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav End -->
+
+        <!-- About Me Start-->
+        <div class="about" id="about" style="padding: 80px 0; background-color: #f8f9fa;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 style="font-size: 36px; font-weight: 700; color: var(--dark-color); position: relative; display: inline-block; padding-bottom: 15px;">
+                            About Me
+                            <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-12 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                        <div style="position: relative;">
+                            <img src="img/sumitiimg.jpeg" style="border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); width: 100%; object-fit: cover;" />
+                            <div style="position: absolute; bottom: -20px; left: -20px; width: 100px; height: 100px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px; z-index: -1;"></div>
+                            <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: linear-gradient(to right, var(--accent-color), #ff9f43); border-radius: 10px; z-index: -1;"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-12" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="about-content">
+                            <h3 style="font-size: 28px; font-weight: 700; color: var(--dark-color); margin-bottom: 20px;">Data Science & AI Enthusiast</h3>
+                            <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+                                I am a passionate second-year student at Lovely Professional University, specializing in Data Science and AI. As an aspiring data scientist, I combine my academic knowledge with hands-on project experience to develop innovative solutions to complex problems.
+                            </p>
+                            <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+                                My expertise lies in developing intelligent systems that solve real-world problems. From facial recognition security systems to predictive analytics models, I'm dedicated to creating solutions that make a meaningful impact. I constantly stay updated with the latest advancements in AI and am eager to apply cutting-edge techniques to challenging problems.
+                            </p>
+                            
+                            <div class="row mt-4 mb-4">
+                                <div class="col-md-4 text-center">
+                                    <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                                        <h3 style="font-size: 40px; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">5+</h3>
+                                        <p style="font-size: 16px; color: #666; font-weight: 500;">Projects Completed</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                                        <h3 style="font-size: 40px; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">3+</h3>
+                                        <p style="font-size: 16px; color: #666; font-weight: 500;">Research Papers</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                                        <h3 style="font-size: 40px; font-weight: 700; color: var(--primary-color); margin-bottom: 5px;">2+</h3>
+                                        <p style="font-size: 16px; color: #666; font-weight: 500;">Years Experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a class="btn" href="portfolio-html-template\files\sumit data science.pdf" download style="padding: 12px 30px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); color: white; border-radius: 5px; font-weight: 600; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border: none; transition: all 0.3s ease; display: inline-block; margin-right: 15px;">Download CV</a>
+                                <a class="btn" href="#contact" style="padding: 12px 30px; background: white; color: var(--dark-color); border-radius: 5px; font-weight: 600; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border: 1px solid #eee; transition: all 0.3s ease; display: inline-block;">Contact Me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Skills Section -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center mb-5">
+                        <h2 style="font-size: 36px; font-weight: 700; color: var(--dark-color); position: relative; display: inline-block; padding-bottom: 15px;">
+                            My Skills
+                            <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                        </h2>
+                    </div>
+                    
+                    <div class="col-lg-12">
+                        <div class="skills-container" style="background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); padding: 40px; margin-bottom: 30px;">
+                            <div class="row">
+                                <!-- First Column -->
+                                <div class="col-md-6">
+                                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 25px; color: var(--dark-color);">Technical Expertise</h3>
+                                    
+                                    <!-- Machine Learning -->
+                                    <div class="skill-item" style="margin-bottom: 25px;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <div style="display: flex; align-items: center;">
+                                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #6c63ff, #a29bfe); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                    <i class="fa fa-cogs" style="color: white; font-size: 18px;"></i>
+                                                </div>
+                                                <p style="font-weight: 600; font-size: 16px; color: #333; margin: 0;">Machine Learning</p>
+                                            </div>
+                                            <p style="font-weight: 700; color: var(--primary-color); margin: 0;">95%</p>
+                                        </div>
+                                        <div style="height: 8px; background-color: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                            <div style="height: 100%; width: 95%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Computer Vision -->
+                                    <div class="skill-item" style="margin-bottom: 25px;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <div style="display: flex; align-items: center;">
+                                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #1dd1a1, #10ac84); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                    <i class="fa fa-eye" style="color: white; font-size: 18px;"></i>
+                                                </div>
+                                                <p style="font-weight: 600; font-size: 16px; color: #333; margin: 0;">Computer Vision</p>
+                                            </div>
+                                            <p style="font-weight: 700; color: #1dd1a1; margin: 0;">92%</p>
+                                        </div>
+                                        <div style="height: 8px; background-color: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                            <div style="height: 100%; width: 92%; background: linear-gradient(to right, #1dd1a1, #10ac84); border-radius: 10px;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Python -->
+                                    <div class="skill-item" style="margin-bottom: 25px;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <div style="display: flex; align-items: center;">
+                                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #54a0ff, #2e86de); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                    <i class="fa fa-code" style="color: white; font-size: 18px;"></i>
+                                                </div>
+                                                <p style="font-weight: 600; font-size: 16px; color: #333; margin: 0;">Python</p>
+                                            </div>
+                                            <p style="font-weight: 700; color: #54a0ff; margin: 0;">98%</p>
+                                        </div>
+                                        <div style="height: 8px; background-color: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                            <div style="height: 100%; width: 98%; background: linear-gradient(to right, #54a0ff, #2e86de); border-radius: 10px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Second Column -->
+                                <div class="col-md-6">
+                                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 25px; color: var(--dark-color);">Industry Skills</h3>
+                                    
+                                    <!-- Deep Learning -->
+                                    <div class="skill-item" style="margin-bottom: 25px;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <div style="display: flex; align-items: center;">
+                                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #ff6b6b, #ee5253); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                    <i class="fa fa-brain" style="color: white; font-size: 18px;"></i>
+                                                </div>
+                                                <p style="font-weight: 600; font-size: 16px; color: #333; margin: 0;">Deep Learning</p>
+                                            </div>
+                                            <p style="font-weight: 700; color: var(--accent-color); margin: 0;">90%</p>
+                                        </div>
+                                        <div style="height: 8px; background-color: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                            <div style="height: 100%; width: 90%; background: linear-gradient(to right, #ff6b6b, #ee5253); border-radius: 10px;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Data Analysis -->
+                                    <div class="skill-item" style="margin-bottom: 25px;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <div style="display: flex; align-items: center;">
+                                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #feca57, #ff9f43); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                    <i class="fa fa-chart-bar" style="color: white; font-size: 18px;"></i>
+                                                </div>
+                                                <p style="font-weight: 600; font-size: 16px; color: #333; margin: 0;">Data Analysis</p>
+                                            </div>
+                                            <p style="font-weight: 700; color: #feca57; margin: 0;">94%</p>
+                                        </div>
+                                        <div style="height: 8px; background-color: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                            <div style="height: 100%; width: 94%; background: linear-gradient(to right, #feca57, #ff9f43); border-radius: 10px;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- SQL/NoSQL -->
+                                    <div class="skill-item" style="margin-bottom: 25px;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <div style="display: flex; align-items: center;">
+                                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                    <i class="fa fa-database" style="color: white; font-size: 18px;"></i>
+                                                </div>
+                                                <p style="font-weight: 600; font-size: 16px; color: #333; margin: 0;">SQL/NoSQL</p>
+                                            </div>
+                                            <p style="font-weight: 700; color: #9b59b6; margin: 0;">88%</p>
+                                        </div>
+                                        <div style="height: 8px; background-color: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                            <div style="height: 100%; width: 88%; background: linear-gradient(to right, #9b59b6, #8e44ad); border-radius: 10px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Frameworks and Tools Section -->
+                            <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 30px;">
+                                <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 25px; color: var(--dark-color); text-align: center;">Frameworks & Tools</h3>
+                                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: var(--primary-color); border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">TensorFlow</span>
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: var(--accent-color); border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">PyTorch</span>
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: #1dd1a1; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">Scikit-learn</span>
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: #54a0ff; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">Pandas</span>
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: #feca57; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">NumPy</span>
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: #9b59b6; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">OpenCV</span>
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: var(--primary-color); border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">Keras</span>
+                                    <span style="padding: 10px 20px; background: #f8f9fa; border-radius: 30px; font-size: 15px; font-weight: 600; color: var(--accent-color); border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">NLTK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Me End-->
+        
+        <!-- Experience Start -->
+        <div class="experience" id="experience" style="padding: 80px 0; background-color: #f8f9fa;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 style="font-size: 36px; font-weight: 700; color: var(--dark-color); position: relative; display: inline-block; padding-bottom: 15px;">
+                            Academic & Project Experience
+                            <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                        </h2>
+                        <p style="max-width: 700px; margin: 20px auto 0; color: #666; font-size: 16px; line-height: 1.7;">
+                            As a second-year student at Lovely Professional University, I've gained valuable experience through coursework, projects, and extracurricular activities.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Interactive Timeline -->
+                <div class="timeline-container" style="position: relative;">
+                    <!-- Vertical Line -->
+                    <div style="position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color)); transform: translateX(-50%);"></div>
+                    
+                    <!-- Experience Item 1 -->
+                    <div class="row timeline-item mb-5" data-aos="fade-up">
+                        <div class="col-md-6 text-md-right pr-md-5 mb-4 mb-md-0">
+                            <div class="timeline-content" style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 30px; position: relative; transition: all 0.3s ease; cursor: pointer; transform: translateY(0); height: 100%;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                                <div style="position: absolute; top: 20px; right: -50px; width: 30px; height: 30px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 50%; z-index: 10; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"></div>
+                                <div style="position: absolute; top: 25px; right: -60px; width: 20px; height: 4px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></div>
+                                <span style="display: inline-block; padding: 8px 20px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); color: white; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);">Aug 2023 - Present</span>
+                                <h3 style="font-size: 22px; font-weight: 700; color: var(--dark-color); margin-bottom: 10px;">B.Tech Student - Data Science</h3>
+                                <h4 style="font-size: 16px; color: var(--primary-color); margin-bottom: 15px; font-weight: 600;">Lovely Professional University</h4>
+                                <p style="color: #666; line-height: 1.7; font-size: 15px;">
+                                    Currently pursuing my bachelor's degree with a focus on Data Science and AI. Maintaining a strong academic record while actively participating in coding competitions, hackathons, and technical workshops. Developing a solid foundation in programming, algorithms, and data structures.
+                                </p>
+                                <div class="skills-tags" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px;">
+                                    <span style="padding: 5px 15px; background: rgba(108, 99, 255, 0.1); border-radius: 20px; font-size: 13px; color: var(--primary-color);">Python</span>
+                                    <span style="padding: 5px 15px; background: rgba(108, 99, 255, 0.1); border-radius: 20px; font-size: 13px; color: var(--primary-color);">Data Structures</span>
+                                    <span style="padding: 5px 15px; background: rgba(108, 99, 255, 0.1); border-radius: 20px; font-size: 13px; color: var(--primary-color);">Algorithms</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                    
+                    <!-- Experience Item 2 -->
+                    <div class="row timeline-item mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6 pl-md-5">
+                            <div class="timeline-content" style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 30px; position: relative; transition: all 0.3s ease; cursor: pointer; transform: translateY(0); height: 100%;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                                <div style="position: absolute; top: 20px; left: -50px; width: 30px; height: 30px; background: linear-gradient(135deg, var(--accent-color), #ff9f9f); border-radius: 50%; z-index: 10; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"></div>
+                                <div style="position: absolute; top: 25px; left: -60px; width: 20px; height: 4px; background: linear-gradient(to right, var(--accent-color), #ff9f9f);"></div>
+                                <span style="display: inline-block; padding: 8px 20px; background: linear-gradient(to right, var(--accent-color), #ff9f9f); color: white; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);">Jan 2024 - Present</span>
+                                <h3 style="font-size: 22px; font-weight: 700; color: var(--dark-color); margin-bottom: 10px;">Student Researcher</h3>
+                                <h4 style="font-size: 16px; color: var(--accent-color); margin-bottom: 15px; font-weight: 600;">University AI Research Group</h4>
+                                <p style="color: #666; line-height: 1.7; font-size: 15px;">
+                                    Contributing to research projects focused on machine learning applications. Implementing algorithms for data analysis and pattern recognition. Collaborating with faculty and senior students on innovative AI solutions for real-world problems.
+                                </p>
+                                <div class="skills-tags" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px;">
+                                    <span style="padding: 5px 15px; background: rgba(255, 107, 107, 0.1); border-radius: 20px; font-size: 13px; color: var(--accent-color);">Machine Learning</span>
+                                    <span style="padding: 5px 15px; background: rgba(255, 107, 107, 0.1); border-radius: 20px; font-size: 13px; color: var(--accent-color);">Research</span>
+                                    <span style="padding: 5px 15px; background: rgba(255, 107, 107, 0.1); border-radius: 20px; font-size: 13px; color: var(--accent-color);">Data Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Item 3 -->
+                    <div class="row timeline-item mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-6 text-md-right pr-md-5 mb-4 mb-md-0">
+                            <div class="timeline-content" style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 30px; position: relative; transition: all 0.3s ease; cursor: pointer; transform: translateY(0); height: 100%;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                                <div style="position: absolute; top: 20px; right: -50px; width: 30px; height: 30px; background: linear-gradient(135deg, #1dd1a1, #10ac84); border-radius: 50%; z-index: 10; box-shadow: 0 5px 15px rgba(29, 209, 161, 0.3);"></div>
+                                <div style="position: absolute; top: 25px; right: -60px; width: 20px; height: 4px; background: linear-gradient(to right, #1dd1a1, #10ac84);"></div>
+                                <span style="display: inline-block; padding: 8px 20px; background: linear-gradient(to right, #1dd1a1, #10ac84); color: white; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(29, 209, 161, 0.3);">Oct 2023 - Present</span>
+                                <h3 style="font-size: 22px; font-weight: 700; color: var(--dark-color); margin-bottom: 10px;">Freelancer</h3>
+                                <h4 style="font-size: 16px; color: #1dd1a1; margin-bottom: 15px; font-weight: 600;">Freelancer.com</h4>
+                                <p style="color: #666; line-height: 1.7; font-size: 15px;">
+                                    I am a freelance data analyst and creative visual designer who transforms complex information into clear, compelling narratives. My expertise lies in not only uncovering actionable insights through data analytics but also in communicating those findings effectively through professional video editing and graphic design, ensuring the story is both data-driven and visually engaging.
+
+
+                                <div class="skills-tags" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px;">
+                                    <span style="padding: 5px 15px; background: rgba(29, 209, 161, 0.1); border-radius: 20px; font-size: 13px; color: #1dd1a1;">Web Development</span>
+                                    <span style="padding: 5px 15px; background: rgba(29, 209, 161, 0.1); border-radius: 20px; font-size: 13px; color: #1dd1a1;">Leadership</span>
+                                    <span style="padding: 5px 15px; background: rgba(29, 209, 161, 0.1); border-radius: 20px; font-size: 13px; color: #1dd1a1;">Frontend</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                    
+                    <!-- Experience Item 4 -->
+                    <div class="row timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6 pl-md-5">
+                            <div class="timeline-content" style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 30px; position: relative; transition: all 0.3s ease; cursor: pointer; transform: translateY(0); height: 100%;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                                <div style="position: absolute; top: 20px; left: -50px; width: 30px; height: 30px; background: linear-gradient(135deg, #54a0ff, #2e86de); border-radius: 50%; z-index: 10; box-shadow: 0 5px 15px rgba(84, 160, 255, 0.3);"></div>
+                                <div style="position: absolute; top: 25px; left: -60px; width: 20px; height: 4px; background: linear-gradient(to right, #54a0ff, #2e86de);"></div>
+                                <span style="display: inline-block; padding: 8px 20px; background: linear-gradient(to right, #54a0ff, #2e86de); color: white; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(84, 160, 255, 0.3);">May 2023 - Aug 2023</span>
+                                <h3 style="font-size: 22px; font-weight: 700; color: var(--dark-color); margin-bottom: 10px;">Self-Directed Learning</h3>
+                                <h4 style="font-size: 16px; color: #54a0ff; margin-bottom: 15px; font-weight: 600;">Online Learning Platforms</h4>
+                                <p style="color: #666; line-height: 1.7; font-size: 15px;">
+                                    Completed comprehensive online courses in Python programming, data analysis, and machine learning through platforms like Coursera, Cse Pathshala, and edX. Built several personal projects to apply theoretical knowledge to practical scenarios. Earned certifications in key data science technologies.
+                                </p>
+                                <div class="skills-tags" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px;">
+                                    <span style="padding: 5px 15px; background: rgba(84, 160, 255, 0.1); border-radius: 20px; font-size: 13px; color: #54a0ff;">Self-Learning</span>
+                                    <span style="padding: 5px 15px; background: rgba(84, 160, 255, 0.1); border-radius: 20px; font-size: 13px; color: #54a0ff;">Certifications</span>
+                                    <span style="padding: 5px 15px; background: rgba(84, 160, 255, 0.1); border-radius: 20px; font-size: 13px; color: #54a0ff;">Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Experience End -->
+
+        <!-- Skills Start -->
+        <div class="skills" id="skills">
+            <div class="container">
+                <header class="section-header" data-aos="fade-up">
+                    <h3>My Skills</h3>
+                    <p>
+                        A comprehensive overview of my technical skills and proficiency levels in various technologies and tools.
+                    </p>
+                </header>
+
+                <div class="row">
+                    <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                        <div class="skills-content" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); padding: 30px; margin-bottom: 30px;">
+                            <div class="skills-header" style="margin-bottom: 25px; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px;">
+                                <h2 style="font-size: 22px; font-weight: 700; color: var(--dark-color);">Data Science & AI Skills</h2>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">Machine Learning</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">85%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 85%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">Python</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">90%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 90%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">Data Analysis</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">85%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 85%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">Deep Learning</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">75%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 75%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">Microsoft Excel</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">95%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 95%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">Power BI</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">85%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 85%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-left" data-aos-delay="100">
+                        <div class="skills-content" style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); padding: 30px; margin-bottom: 30px;">
+                            <div class="skills-header" style="margin-bottom: 25px; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px;">
+                                <h2 style="font-size: 22px; font-weight: 700; color: var(--dark-color);">Development Skills</h2>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">HTML & CSS</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">90%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 90%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">JavaScript</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">80%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 80%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" style="margin-bottom: 25px;">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">React/Angular</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">75%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 75%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p style="font-weight: 600; color: #444;">SQL/NoSQL</p>
+                                    <p style="font-weight: 700; color: var(--primary-color);">80%</p>
+                                </div>
+                                <div class="skill-progress" style="height: 10px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                                    <div class="progress-bar" style="height: 100%; width: 80%; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Skills End -->
+        
+        <!-- Experience Start -->
+        <div class="experience" id="experience">
+            <div class="container">
+                <header class="section-header" data-aos="fade-up">
+                    <h3>Academic & Project Experience</h3>
+                    <p>
+                        My academic journey and hands-on project experience in the field of Data Science and AI.
+                    </p>
+                </header>
+
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="timeline-modern">
+                            <div class="timeline-card" data-aos="fade-up" style="border-radius: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); padding: 35px; background: white; margin-bottom: 40px; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: 0; left: 0; width: 8px; height: 100%; background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));"></div>
+                                <div class="d-flex align-items-center justify-content-between" style="margin-bottom: 20px;">
+                                    <div class="timeline-date" style="background: var(--primary-color); color: white; display: inline-block; padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 14px; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);">
+                                        <i class="fa fa-calendar-o" style="margin-right: 8px;"></i>2023 - Present
+                                    </div>
+                                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fa fa-graduation-cap" style="color: var(--primary-color); font-size: 22px;"></i>
+                                    </div>
+                                </div>
+                                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--dark-color);">B.Tech Student - Data Science Minor</h2>
+                                <h4 style="font-size: 16px; color: #666; margin-bottom: 15px; display: flex; align-items: center;">
+                                    <i class="fa fa-map-marker" style="color: var(--primary-color); margin-right: 8px;"></i>Lovely Professional University, Punjab
+                                </h4>
+                                <p style="color: #555; line-height: 1.8; font-size: 15px;">
+                                    Currently pursuing a Bachelor's degree in Technology with specialization in Data Science. Focusing on machine learning, statistical analysis, and AI applications.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-card" data-aos="fade-up" data-aos-delay="100" style="border-radius: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); padding: 35px; background: white; margin-bottom: 40px; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: 0; left: 0; width: 8px; height: 100%; background: linear-gradient(to bottom, var(--accent-color), #ff9f9f);"></div>
+                                <div class="d-flex align-items-center justify-content-between" style="margin-bottom: 20px;">
+                                    <div class="timeline-date" style="background: var(--accent-color); color: white; display: inline-block; padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 14px; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);">
+                                        <i class="fa fa-calendar-o" style="margin-right: 8px;"></i>2023 - Present
+                                    </div>
+                                    <div style="width: 50px; height: 50px; background: rgba(255, 107, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fa fa-flask" style="color: var(--accent-color); font-size: 22px;"></i>
+                                    </div>
+                                </div>
+                                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--dark-color);">Student Researcher</h2>
+                                <h4 style="font-size: 16px; color: #666; margin-bottom: 15px; display: flex; align-items: center;">
+                                    <i class="fa fa-map-marker" style="color: var(--accent-color); margin-right: 8px;"></i>LPU Data Science Research Group
+                                </h4>
+                                <p style="color: #555; line-height: 1.8; font-size: 15px;">
+                                    Working on research projects related to predictive analytics and machine learning applications in educational data mining. Collaborating with faculty and peers on innovative solutions.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-card" data-aos="fade-up" data-aos-delay="200" style="border-radius: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); padding: 35px; background: white; margin-bottom: 40px; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: 0; left: 0; width: 8px; height: 100%; background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));"></div>
+                                <div class="d-flex align-items-center justify-content-between" style="margin-bottom: 20px;">
+                                    <div class="timeline-date" style="background: var(--primary-color); color: white; display: inline-block; padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 14px; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);">
+                                        <i class="fa fa-calendar-o" style="margin-right: 8px;"></i>2023 - Present
+                                    </div>
+                                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fa fa-code" style="color: var(--primary-color); font-size: 22px;"></i>
+                                    </div>
+                                </div>
+                                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--dark-color);">Freelancer</h2>
+                                <h4 style="font-size: 16px; color: #666; margin-bottom: 15px; display: flex; align-items: center;">
+                                    <i class="fa fa-map-marker" style="color: var(--primary-color); margin-right: 8px;"></i>Freelancer.com
+                                </h4>
+                                <p style="color: #555; line-height: 1.8; font-size: 15px;">
+                                    I am a freelance data analyst and creative visual designer who transforms complex information into clear, compelling narratives. My expertise lies in not only uncovering actionable insights through data analytics but also in communicating those findings effectively through professional video editing and graphic design, ensuring the story is both data-driven and visually engaging.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Experience End -->
+
+        <!-- Services Start -->
+        <div class="services" id="services">
+            <div class="container">
+                <header class="section-header" data-aos="fade-up">
+                    <h3>My Services</h3>
+                    <p>
+                        I offer specialized services in Data Science, AI, and full-stack development to help businesses leverage data-driven insights and cutting-edge technologies for competitive advantage.
+                    </p>
+                </header>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="single-service" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease; padding: 30px 20px; background: white;">
+                            <span></span>
+                            <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-television" style="font-size: 28px;"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin: 15px 0;"><a href="#" style="color: var(--dark-color);">Machine Learning Solutions</a></h4>
+                            <p style="color: #666; font-size: 15px;">Custom machine learning models to solve complex business problems and drive decision-making</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="single-service" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease; padding: 30px 20px; background: white;">
+                            <span></span>
+                            <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-laptop" style="font-size: 28px;"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin: 15px 0;"><a href="#" style="color: var(--dark-color);">Data Analysis & Visualization</a></h4>
+                            <p style="color: #666; font-size: 15px;">Comprehensive data analysis and interactive visualizations to extract meaningful insights</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="single-service" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease; padding: 30px 20px; background: white;">
+                            <span></span>
+                            <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-android" style="font-size: 28px;"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin: 15px 0;"><a href="#" style="color: var(--dark-color);">AI Integration</a></h4>
+                            <p style="color: #666; font-size: 15px;">Integrating AI capabilities into existing applications and systems for enhanced functionality</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="single-service" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease; padding: 30px 20px; background: white;">
+                            <span></span>
+                            <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-line-chart" style="font-size: 28px;"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin: 15px 0;"><a href="#" style="color: var(--dark-color);">Predictive Analytics</a></h4>
+                            <p style="color: #666; font-size: 15px;">Building predictive models to forecast trends and outcomes for strategic planning</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="single-service" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease; padding: 30px 20px; background: white;">
+                            <span></span>
+                            <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-code" style="font-size: 28px;"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin: 15px 0;"><a href="#" style="color: var(--dark-color);">Full Stack Web Development</a></h4>
+                            <p style="color: #666; font-size: 15px;">End-to-end web applications with modern frontend frameworks and robust backend systems</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="single-service" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease; padding: 30px 20px; background: white;">
+                            <span></span>
+                            <div class="service-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; width: 70px; height: 70px; line-height: 70px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-lightbulb-o" style="font-size: 28px;"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin: 15px 0;"><a href="#" style="color: var(--dark-color);">AI & ML Consulting</a></h4>
+                            <p style="color: #666; font-size: 15px;">Strategic guidance on implementing AI and machine learning solutions for your business</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+
+
+        <!-- Portfolio Start -->
+        <div class="portfolio" id="portfolio" style="background-color: #f9fafb;">
+            <div class="container">
+                <header class="section-header" data-aos="fade-up">
+                    <h3 class="section-title" style="font-size: 32px; font-weight: 800; margin-bottom: 15px;">My Projects & Patents</h3>
+                    <p style="max-width: 700px; margin: 0 auto; font-size: 16px; line-height: 1.7; color: #666;">
+                        Showcasing my innovative solutions in Data Science, AI, and Web Development that solve real-world problems, including patented AI technologies.
+                    </p>
+                </header>
+                
+                <!-- Patents Section -->
+                <div class="row mt-5 mb-5">
+                    <div class="col-12 text-center mb-4">
+                        <h3 style="font-size: 24px; font-weight: 700; color: var(--dark-color); position: relative; display: inline-block; padding-bottom: 10px;">
+                            AI Patents
+                            <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                        </h3>
+                    </div>
+                    
+                    <!-- Patent 1 -->
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up">
+                        <div style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; height: 100%; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                            <div style="padding: 8px 15px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); color: white; font-weight: 600; font-size: 14px; letter-spacing: 0.5px;">
+                                <i class="fa fa-certificate" style="margin-right: 8px;"></i> Patent Filed
+                            </div>
+                            <div style="padding: 25px;">
+                                <h4 style="font-weight: 700; margin-bottom: 15px; font-size: 20px; color: var(--dark-color);">Wearable Real Time Language Translator</h4>
+                                <p style="color: #666; margin-bottom: 20px; font-size: 15px; line-height: 1.7;">
+                                    A compact, wearable AI translator device that provides seamless, real-time cross-language communication. The device leverages integrated microphones and speakers, powered by advanced Natural Language Processing (NLP) and neural machine translation. It employs on-device speech recognition and semantic analysis algorithms to instantly convert spoken language, preserving tone, context, and colloquialisms for natural, face-to-face conversation without the need for a network connection.
+                                </p>
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                                    <span style="padding: 5px 15px; background: rgba(108, 99, 255, 0.1); border-radius: 20px; font-size: 13px; color: var(--primary-color);">NLP</span>
+                                    <span style="padding: 5px 15px; background: rgba(108, 99, 255, 0.1); border-radius: 20px; font-size: 13px; color: var(--primary-color);">Translator</span>
+                                    <span style="padding: 5px 15px; background: rgba(108, 99, 255, 0.1); border-radius: 20px; font-size: 13px; color: var(--primary-color);">Audio Processing</span>
+                                </div>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 8px 20px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600; color: white;">Patent Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Patent 2 -->
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; height: 100%; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+                            <div style="padding: 8px 15px; background: linear-gradient(to right, var(--accent-color), #ff9f9f); color: white; font-weight: 600; font-size: 14px; letter-spacing: 0.5px;">
+                                <i class="fa fa-certificate" style="margin-right: 8px;"></i> Patent Filed
+                            </div>
+                            <div style="padding: 25px;">
+                                <h4 style="font-weight: 700; margin-bottom: 15px; font-size: 20px; color: var(--dark-color);">AI-Based Emotion-detecting product recommendation system</h4>
+                                <p style="color: #666; margin-bottom: 20px; font-size: 15px; line-height: 1.7;">
+                                    An intuitive AI shopping assistant that uses real-time emotion detection to personalize product discovery. The system employs advanced affective computing and facial expression analysis to gauge a user's emotional response to items. By interpreting subtle cues like joy, interest, or surprise, it dynamically curates and recommends products that genuinely resonate with the user's current mood and desires, creating a uniquely responsive and empathetic shopping experience.
+                                </p>
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                                    <span style="padding: 5px 15px; background: rgba(255, 107, 107, 0.1); border-radius: 20px; font-size: 13px; color: var(--accent-color);">OpenCV</span>
+                                    <span style="padding: 5px 15px; background: rgba(255, 107, 107, 0.1); border-radius: 20px; font-size: 13px; color: var(--accent-color);">Machine Learning</span>
+                                    <span style="padding: 5px 15px; background: rgba(255, 107, 107, 0.1); border-radius: 20px; font-size: 13px; color: var(--accent-color);">Emothion Detection</span>
+                                </div>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 8px 20px; display: inline-block; background: linear-gradient(to right, var(--accent-color), #ff9f9f); box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3); border-radius: 5px; font-weight: 600; color: white;">Patent Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Portfolio filters removed as requested -->
+                    </div>
+                </div>
+
+                <div class="row portfolio-container" style="margin-top: 30px;">
+                    <!-- New Project: Face Recognition Smart Voting System -->
+                    <div class="col-lg-4 col-md-6 portfolio-item featured-project" data-aos="fade-up">
+                        <div class="portfolio-wrap" style="transition: all 0.4s ease; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);">
+                            <div style="position: absolute; top: 15px; left: 15px; background: var(--accent-color); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; z-index: 10; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);">Featured Project</div>
+                            <figure style="position: relative;">
+                                <img src="img/portfolio-2.jpg" class="img-fluid" alt="Smart Voting System" style="transition: all 0.4s ease; height: 240px; width: 100%; object-fit: cover;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; font-size: 18px; font-weight: bold; text-align: center;">Face Recognition Smart Voting System</div>
+                                <a href="img/portfolio-2.jpg" data-lightbox="portfolio" data-title="Face Recognition Smart Voting System" class="link-preview" title="Preview" style="position: absolute; right: 15px; top: 15px; background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"><i class="fa fa-eye"></i></a>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="link-details" title="GitHub Repository" style="position: absolute; right: 65px; top: 15px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"><i class="fa fa-github"></i></a>
+                            </figure>
+                            <div class="portfolio-info" style="padding: 25px; background: white;">
+                                <h4 style="font-weight: 700; margin-bottom: 10px; font-size: 22px; color: #000000; letter-spacing: 0.5px;">Face Recognition Smart Voting System</h4>
+                                <div style="color: var(--primary-color); font-size: 15px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Computer Vision & Security</div>
+                                <p style="color: #444; margin-bottom: 15px; font-size: 15px; line-height: 1.6;">A secure electronic voting system using facial recognition to verify voter identity and prevent fraud in democratic processes.</p>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 10px 22px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600;">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 portfolio-item web-des" data-aos="fade-up" data-aos-delay="100">
+                        <div class="portfolio-wrap" style="transition: all 0.4s ease; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);">
+                            <figure style="position: relative;">
+                                <img src="img/portfolio-3.jpg" class="img-fluid" alt="Student Performance Predictor" style="transition: all 0.4s ease; height: 240px; width: 100%; object-fit: cover;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; font-size: 18px; font-weight: bold; text-align: center;">Student Performance Predictor</div>
+                                <a href="img/portfolio-3.jpg" data-lightbox="portfolio" data-title="Student Performance Predictor" class="link-preview" title="Preview" style="position: absolute; right: 15px; top: 15px; background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"><i class="fa fa-eye"></i></a>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="link-details" title="GitHub Repository" style="position: absolute; right: 65px; top: 15px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"><i class="fa fa-github"></i></a>
+                            </figure>
+                            <div class="portfolio-info" style="padding: 25px; background: white;">
+                                <h4 style="font-weight: 700; margin-bottom: 10px; font-size: 22px; color: #000000; letter-spacing: 0.5px;">Covid-19 Variant detection Analyzer</h4>
+                                <div style="color: var(--primary-color); font-size: 15px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Data Science</div>
+                                <p style="color: #444; margin-bottom: 15px; font-size: 15px; line-height: 1.6;">A machine learning model to predict Covid-19 Variant based on various factors.</p>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 10px 22px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600;">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item web-dev" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-wrap" style="transition: all 0.4s ease; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);">
+                            <figure style="position: relative;">
+                                <img src="img/portfolio-4.jpg" class="img-fluid" alt="Smart Attendance System" style="transition: all 0.4s ease; height: 240px; width: 100%; object-fit: cover;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; font-size: 18px; font-weight: bold; text-align: center;">Smart Attendance System</div>
+                                <a href="img/portfolio-4.jpg" data-lightbox="portfolio" data-title="Smart Attendance System" class="link-preview" title="Preview" style="position: absolute; right: 15px; top: 15px; background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"><i class="fa fa-eye"></i></a>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="link-details" title="GitHub Repository" style="position: absolute; right: 65px; top: 15px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"><i class="fa fa-github"></i></a>
+                            </figure>
+                            <div class="portfolio-info" style="padding: 25px; background: white;">
+                                <h4 style="font-weight: 700; margin-bottom: 10px; font-size: 22px; color: #000000; letter-spacing: 0.5px;">Smart Attendance System</h4>
+                                <div style="color: var(--primary-color); font-size: 15px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Computer Vision</div>
+                                <p style="color: #444; margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Facial recognition system for automated attendance tracking in educational institutions.</p>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 10px 22px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600;">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item app-dev" data-aos="fade-up" data-aos-delay="300">
+                        <div class="portfolio-wrap" style="transition: all 0.4s ease; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);">
+                            <figure style="position: relative;">
+                                <img src="img/portfolio-5.jpg" class="img-fluid" alt="Sentiment Analysis Tool" style="transition: all 0.4s ease; height: 240px; width: 100%; object-fit: cover;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; font-size: 18px; font-weight: bold; text-align: center;">Sentiment Analysis Tool</div>
+                                <a href="img/portfolio-5.jpg" data-lightbox="portfolio" data-title="Sentiment Analysis Tool" class="link-preview" title="Preview" style="position: absolute; right: 15px; top: 15px; background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"><i class="fa fa-eye"></i></a>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="link-details" title="GitHub Repository" style="position: absolute; right: 65px; top: 15px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"><i class="fa fa-github"></i></a>
+                            </figure>
+                            <div class="portfolio-info" style="padding: 25px; background: white;">
+                                <h4 style="font-weight: 700; margin-bottom: 10px; font-size: 22px; color: #000000; letter-spacing: 0.5px;">Sentiment Analysis Tool</h4>
+                                <div style="color: var(--primary-color); font-size: 15px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">NLP & Data Visualization</div>
+                                <p style="color: #444; margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Interactive dashboard for analyzing sentiment in customer reviews and social media data.</p>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 10px 22px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600;">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item web-des" data-aos="fade-up" data-aos-delay="100">
+                        <div class="portfolio-wrap" style="transition: all 0.4s ease; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);">
+                            <figure style="position: relative;">
+                                <img src="img/portfolio-6.jpg" class="img-fluid" alt="Campus Navigation App" style="transition: all 0.4s ease; height: 240px; width: 100%; object-fit: cover;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; font-size: 18px; font-weight: bold; text-align: center;">Campus Navigation App</div>
+                                <a href="img/portfolio-6.jpg" data-lightbox="portfolio" data-title="Campus Navigation App" class="link-preview" title="Preview" style="position: absolute; right: 15px; top: 15px; background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"><i class="fa fa-eye"></i></a>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="link-details" title="GitHub Repository" style="position: absolute; right: 65px; top: 15px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"><i class="fa fa-github"></i></a>
+                            </figure>
+                            <div class="portfolio-info" style="padding: 25px; background: white;">
+                                <h4 style="font-weight: 700; margin-bottom: 10px; font-size: 22px; color: #000000; letter-spacing: 0.5px;">Campus Navigation App</h4>
+                                <div style="color: var(--primary-color); font-size: 15px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Web Development</div>
+                                <p style="color: #444; margin-bottom: 15px; font-size: 15px; line-height: 1.6;">Interactive map and navigation system for university campus with points of interest.</p>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 10px 22px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600;">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item web-dev" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-wrap" style="transition: all 0.4s ease; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);">
+                            <figure style="position: relative;">
+                                <img src="img/portfolio-1.jpg" class="img-fluid" alt="Student Community Portal" style="transition: all 0.4s ease; height: 240px; width: 100%; object-fit: cover;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; font-size: 18px; font-weight: bold; text-align: center;">Student Community Portal</div>
+                                <a href="img/portfolio-1.jpg" data-lightbox="portfolio" data-title="Student Community Portal" class="link-preview" title="Preview" style="position: absolute; right: 15px; top: 15px; background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"><i class="fa fa-eye"></i></a>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="link-details" title="GitHub Repository" style="position: absolute; right: 65px; top: 15px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"><i class="fa fa-github"></i></a>
+                            </figure>
+                            <div class="portfolio-info" style="padding: 25px; background: white;">
+                                <h4 style="font-weight: 700; margin-bottom: 10px; font-size: 22px; color: #000000; letter-spacing: 0.5px;">Student Community Portal</h4>
+                                <div style="color: var(--primary-color); font-size: 15px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Full Stack</div>
+                                <p style="color: #444; margin-bottom: 15px; font-size: 15px; line-height: 1.6;">A comprehensive platform for student collaboration, resource sharing, and community building.</p>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 10px 22px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600;">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item app-dev" data-aos="fade-up" data-aos-delay="300">
+                        <div class="portfolio-wrap" style="transition: all 0.4s ease; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; position: relative; margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.05);">
+                            <figure style="position: relative;">
+                                <img src="img/portfolio-5.jpg" class="img-fluid" alt="Image Classification Web App" style="transition: all 0.4s ease; height: 240px; width: 100%; object-fit: cover;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px 15px; font-size: 18px; font-weight: bold; text-align: center;">Image Classification Web App</div>
+                                <a href="img/portfolio-5.jpg" data-lightbox="portfolio" data-title="Image Classification Web App" class="link-preview" title="Preview" style="position: absolute; right: 15px; top: 15px; background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);"><i class="fa fa-eye"></i></a>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="link-details" title="GitHub Repository" style="position: absolute; right: 65px; top: 15px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);"><i class="fa fa-github"></i></a>
+                            </figure>
+                            <div class="portfolio-info" style="padding: 25px; background: white;">
+                                <h4 style="font-weight: 700; margin-bottom: 10px; font-size: 22px; color: #000000; letter-spacing: 0.5px;">Image Classification Web App</h4>
+                                <div style="color: var(--primary-color); font-size: 15px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Deep Learning</div>
+                                <p style="color: #444; margin-bottom: 15px; font-size: 15px; line-height: 1.6;">A web application that uses deep learning to classify images uploaded by users.</p>
+                                <a href="https://github.com/Sumitkumarbarnwal" target="_blank" class="btn-custom" style="font-size: 14px; padding: 10px 22px; display: inline-block; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border-radius: 5px; font-weight: 600;">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+
+        <!-- Testimonials Start -->
+        <div class="testimonials" id="testimonials" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/testimonial-bg.jpg) center center no-repeat; background-size: cover; padding: 80px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 style="font-size: 36px; font-weight: 700; color: white; position: relative; display: inline-block; padding-bottom: 15px;">
+                            What People Say
+                            <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="owl-carousel testimonials-carousel">
+                    <div class="testimonial-item" style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 40px; text-align: center; backdrop-filter: blur(10px); margin: 15px;">
+                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 25px; border: 5px solid var(--primary-color); box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);">
+                            <img src="img/testimonial-1.jpg" class="testimonial-img" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="color: white; font-size: 22px; font-weight: 700; margin-bottom: 5px;">Dr. Ashima sharma</h3>
+                        <h4 style="color: var(--primary-color); font-size: 16px; font-weight: 600; margin-bottom: 20px;">Professor, AI Research Department</h4>
+                        <div style="color: var(--primary-color); margin-bottom: 15px;">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p style="color: #ddd; font-size: 16px; line-height: 1.7; font-style: italic;">
+                            "Sumit has shown exceptional talent in machine learning and data science. His project on facial recognition for secure voting systems demonstrates both technical excellence and a commitment to solving real-world problems. A truly promising young data scientist."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item" style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 40px; text-align: center; backdrop-filter: blur(10px); margin: 15px;">
+                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 25px; border: 5px solid var(--accent-color); box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);">
+                            <img src="img/testimonial-2.jpg" class="testimonial-img" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="color: white; font-size: 22px; font-weight: 700; margin-bottom: 5px;">Priya Sharma</h3>
+                        <h4 style="color: var(--accent-color); font-size: 16px; font-weight: 600; margin-bottom: 20px;">Tech Club President, LPU</h4>
+                        <div style="color: var(--accent-color); margin-bottom: 15px;">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p style="color: #ddd; font-size: 16px; line-height: 1.7; font-style: italic;">
+                            "Working with Sumit's on the university's tech projects has been inspiring. His leadership in web development and ability to mentor junior students sets him apart. He consistently delivers high-quality work while maintaining a collaborative spirit."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item" style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 40px; text-align: center; backdrop-filter: blur(10px); margin: 15px;">
+                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 25px; border: 5px solid #1dd1a1; box-shadow: 0 10px 20px rgba(29, 209, 161, 0.3);">
+                            <img src="img/testimonial-3.jpg" class="testimonial-img" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="color: white; font-size: 22px; font-weight: 700; margin-bottom: 5px;">Vikram Singh</h3>
+                        <h4 style="color: #1dd1a1; font-size: 16px; font-weight: 600; margin-bottom: 20px;">Hackathon Organizer, TechFest 2024</h4>
+                        <div style="color: #1dd1a1; margin-bottom: 15px;">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <p style="color: #ddd; font-size: 16px; line-height: 1.7; font-style: italic;">
+                            "Sumit's team won first place in our annual hackathon with their innovative Smart Attendance System. His deep understanding of computer vision algorithms and practical implementation skills were impressive. He has a bright future in the field of AI."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonials End -->
+
+        <!-- Contact Start -->
+        <div class="contact" id="contact" style="padding: 80px 0; background-color: #f8f9fa;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 style="font-size: 36px; font-weight: 700; color: var(--dark-color); position: relative; display: inline-block; padding-bottom: 15px;">
+                            Get In Touch
+                            <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                        </h2>
+                        <p style="max-width: 700px; margin: 20px auto 0; color: #666; font-size: 16px; line-height: 1.7;">
+                            Interested in collaborating on a data science project or need AI expertise for your business? Feel free to reach out to me through any of the channels below.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-5 col-md-12 mb-5 mb-lg-0">
+                        <div class="contact-info-card" style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 40px; height: 100%;">
+                            <h3 style="font-size: 24px; font-weight: 700; color: var(--dark-color); margin-bottom: 30px; position: relative; padding-bottom: 15px;">
+                                Contact Information
+                                <span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                            </h3>
+                            
+                            <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 25px;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);">
+                                    <i class="fa fa-user" style="color: white; font-size: 20px;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 600; color: var(--dark-color); margin-bottom: 5px; font-size: 16px;">Name</p>
+                                    <p style="color: #666; margin: 0; font-size: 15px;">Sumit Kumar Barnwal</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 25px;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent-color), #ff9f9f); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);">
+                                    <i class="fa fa-tag" style="color: white; font-size: 20px;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 600; color: var(--dark-color); margin-bottom: 5px; font-size: 16px;">Role</p>
+                                    <p style="color: #666; margin: 0; font-size: 15px;">Data Science Student at LPU</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 25px;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #1dd1a1, #10ac84); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; box-shadow: 0 5px 15px rgba(29, 209, 161, 0.3);">
+                                    <i class="fa fa-map-marker" style="color: white; font-size: 20px;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 600; color: var(--dark-color); margin-bottom: 5px; font-size: 16px;">Location</p>
+                                    <p style="color: #666; margin: 0; font-size: 15px;">West Bengal, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" style="display: flex; align-items: center; margin-bottom: 25px;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #54a0ff, #2e86de); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; box-shadow: 0 5px 15px rgba(84, 160, 255, 0.3);">
+                                    <i class="fa fa-envelope" style="color: white; font-size: 20px;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 600; color: var(--dark-color); margin-bottom: 5px; font-size: 16px;">Email</p>
+                                    <p style="color: #666; margin: 0; font-size: 15px;"><a href="mailto:Sumitkumarbarnwal2019@gmail.com" style="color: #666; text-decoration: none; transition: all 0.3s ease;">Sumitkumarbarnwal2019@gmail.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" style="display: flex; align-items: center;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #feca57, #ff9f43); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; box-shadow: 0 5px 15px rgba(254, 202, 87, 0.3);">
+                                    <i class="fa fa-phone" style="color: white; font-size: 20px;"></i>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 600; color: var(--dark-color); margin-bottom: 5px; font-size: 16px;">Phone</p>
+                                    <p style="color: #666; margin: 0; font-size: 15px;"><a href="tel:+919571441853" style="color: #666; text-decoration: none; transition: all 0.3s ease;">+91 7029294654</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-7 col-md-12">
+                        <div class="contact-form-card" style="background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 40px;">
+                            <h3 style="font-size: 24px; font-weight: 700; color: var(--dark-color); margin-bottom: 30px; position: relative; padding-bottom: 15px;">
+                                Send Me a Message
+                                <span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"></span>
+                            </h3>
+                            
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Your Name" style="padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: none; transition: all 0.3s ease;">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Your Email" style="padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: none; transition: all 0.3s ease;">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Subject" style="padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: none; transition: all 0.3s ease;">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="5" placeholder="Your Message" style="padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: none; transition: all 0.3s ease;"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                            <button type="submit" class="btn" style="padding: 12px 30px; background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); color: white; border-radius: 10px; font-weight: 600; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); border: none; transition: all 0.3s ease; margin-bottom: 15px;">Send Message</button>
+                                            <a href="#" class="btn" style="padding: 12px 30px; background: white; color: var(--dark-color); border-radius: 10px; font-weight: 600; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border: 1px solid #eee; transition: all 0.3s ease; margin-bottom: 15px;">Download CV <i class="fa fa-download ml-2"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div class="social-links mt-4 text-center">
+                                <h4 style="font-size: 18px; font-weight: 600; color: var(--dark-color); margin-bottom: 15px;">Connect With Me</h4>
+                                <div style="display: flex; justify-content: center; gap: 15px;">
+                                    <a href="#" style="width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); transition: all 0.3s ease;"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#" style="width: 45px; height: 45px; background: linear-gradient(135deg, #54a0ff, #2e86de); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 5px 15px rgba(84, 160, 255, 0.3); transition: all 0.3s ease;"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" style="width: 45px; height: 45px; background: linear-gradient(135deg, var(--accent-color), #ff9f9f); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;"><i class="fa fa-github"></i></a>
+                                    <a href="#" style="width: 45px; height: 45px; background: linear-gradient(135deg, #1dd1a1, #10ac84); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 5px 15px rgba(29, 209, 161, 0.3); transition: all 0.3s ease;"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Footer Start -->
+<div class="footer" style="padding: 30px 0; background-color: #222; text-align: center;">
+    <div class="container">
+        <div class="footer-content" style="color: #fff;">
+            <p>&copy; Copyright <a href="#" style="color: var(--primary-color); text-decoration: none;">Sumit</a>. All Rights Reserved</p>
+            <p>Portfolio 2025</p>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/typed/typed.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/stickyjs/sticky.js"></script>
+        <script src="lib/superfish/hoverIntent.js"></script>
+        <script src="lib/superfish/superfish.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- AOS Animation Library -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="js/main.js"></script>
+        
+        <!-- Custom CSS for Lightbox -->
+        <style>
+            /* Add custom styling to make project names visible in lightbox */
+            .portfolio-wrap .portfolio-info h4 {
+                position: relative;
+                z-index: 5;
+            }
+            
+            /* Make sure project titles are clearly visible on cards */
+            .portfolio-info {
+                background: white !important;
+                border-top: 4px solid var(--primary-color);
+            }
+            
+            /* Ensure lightbox captions are visible */
+            .lb-data .lb-caption {
+                font-size: 20px !important;
+                font-weight: bold !important;
+                color: white !important;
+                text-align: center !important;
+                display: block !important;
+                width: 100% !important;
+                padding: 10px 0 !important;
+                background-color: rgba(0,0,0,0.7) !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+            }
+            
+            .lb-dataContainer {
+                position: absolute !important;
+                top: 0 !important;
+                width: 100% !important;
+            }
+        </style>
+        
+        <!-- Custom Javascript -->
+        <script>
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+            
+            // Initialize AOS animation library
+            AOS.init();
+            
+            // Initialize Typed.js
+            var typed = new Typed('#typed', {
+                stringsElement: '#typed-strings',
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 1500,
+                startDelay: 1000,
+                loop: true
+            });
+            
+            // Animate skill bars on scroll
+            $(window).on('scroll', function() {
+                $('.progress-bar').each(function() {
+                    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    
+                    if (bottom_of_window > bottom_of_object) {
+                        var width = $(this).attr('aria-valuenow') + '%';
+                        $(this).css('width', width);
+                    }
+                });
+            });
+            
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
